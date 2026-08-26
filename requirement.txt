@@ -1,0 +1,36 @@
+# Environment variables
+python-dotenv
+
+# LLM / Agent framework
+langchain
+langchain-core
+langchain-community
+
+# Mistral LLM
+langchain-mistralai
+langchain-groq
+
+# OpenAI (optional - useful if you want to switch models)
+langchain-openai
+
+# Vector database / embeddings for long-term memory
+chromadb
+
+# Embeddings
+sentence-transformers
+
+# Web/API requests
+requests
+
+# Web search - useful for general chatbot
+tavily-python
+
+# API / backend
+fastapi
+uvicorn
+
+# Data validation
+pydantic
+
+# Optional: async HTTP
+httpx
