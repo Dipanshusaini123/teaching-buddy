@@ -8,14 +8,18 @@ Requires a .env file (or environment variables) with your Groq credentials,
 e.g.:
     GROQ_API_KEY=your_key_here
 """
-
+import os
 import streamlit as st
 from dotenv import load_dotenv
+
+load_dotenv()
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 
-load_dotenv()
+groq_api_key = os.getenv("GROQ_API_KEY")
 
+if not groq_api_key:
+    groq_api_key = st.secrets["GROQ_API_KEY"]
 # ----------------------------------------------------------------------------
 # Page setup
 # ----------------------------------------------------------------------------
@@ -26,8 +30,10 @@ st.set_page_config(page_title="AI Teaching Buddy", page_icon="🧑‍🏫", layo
 # ----------------------------------------------------------------------------
 @st.cache_resource(show_spinner=False)
 def get_chains():
-    llm = ChatGroq(model="openai/gpt-oss-120b")
-
+    llm = ChatGroq(
+    model="openai/gpt-oss-120b",
+    api_key=groq_api_key
+)
     summary_prompt = ChatPromptTemplate.from_messages(
         [
             (
