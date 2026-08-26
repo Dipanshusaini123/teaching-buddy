@@ -4,7 +4,7 @@
 
 Unlike a basic chatbot, Teaching Buddy maintains conversation context and uses **short-term memory + long-term summarized memory** to provide a more continuous and personalized learning experience.
 
-🌐 **Live Demo:** [Add your Streamlit deployment link]
+
 
 ---
 
